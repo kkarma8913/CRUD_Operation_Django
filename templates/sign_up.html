@@ -1,0 +1,16 @@
+{% extends 'home.html' %}
+
+
+{% block main_body %}
+
+<h1>Sign up</h1>
+<form action="" method="POST" class="form-control" enctype="multipart/form-data">
+            {% csrf_token %}
+<table>
+    {{myform}}
+</table>
+
+            <input type="submit" value="submit" class="btn btn-primary">
+        </form>
+
+{% endblock main_body %}

@@ -1,0 +1,93 @@
+ {% extends 'home.html' %}
+{% load static %}
+
+
+
+{% block body %}
+    <body style="background-color: rgb(244, 192, 192);">
+{% endblock body %}
+
+{% block main_body %}
+
+
+
+        <h1>Student Details</h1>
+
+
+        <form action="{% url 'student_filter' %}" method="POST">
+            {% csrf_token %}
+            <label for="">Select Course</label>
+            <select name="course_id" id="">
+                    {% for i in course_data %}
+                    <option value="{{i.id}}">{{i.course_title}}</option>
+                    {% endfor %}
+                    <option value="All">All</option>
+            </select>
+
+            <input type="submit" value="apply" class="btn btn-sm btn-primary" >
+
+        </form>
+
+        <form action="{% url 'student_city' %}" method="POST">
+            {% csrf_token %}
+            <label for="">Select City</label>
+            <select name="city" id="">
+                    {% for i in city_data %}
+                    <option value="{{i}}">{{i}}</option>
+                    {% endfor %}
+                    <option value="All">All</option>
+            </select>
+
+            <input type="submit" value="apply" class="btn btn-sm btn-primary" >
+
+        </form>
+
+
+
+        <hr>
+        <div style=" justify-content: center;">
+        <table class="table table-striped table-hover">
+            <thead >
+                <tr>
+                    <th>Roll NO</th>
+                    <th>Image</th>
+                    <th>Name</th>
+                    <th>Course</th>
+                    <th>Mobile No</th>
+                    <th>City</th>
+                    <th>Update</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in student_data %}
+                <tr>
+                    <td>{{i.roll_no}}</td>
+
+                    {% if i.student_image  %}
+
+                    <td><img src="{{i.student_image.url}}" alt="" height="50" width="50"></td>
+
+                    {% else %}
+                    <td><img src="" alt="" height="50" width="50"></td>
+
+                    {% endif %}
+
+
+                    <td>{{i.name}}</td>
+                    <td>{{i.course}}</td>
+                    <td>{{i.mobile_no}}</td>
+                    <td>{{i.city}}</td>
+                    <td><a href="{% url 'student_update' i.id %}" class="btn btn-info">Update</a></td>
+                    <td><a href="{% url 'student_del' i.id %}" class="btn btn-danger">Delete</a></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <hr>
+        <img src="{% static 'img/students.jpg' %}" alt="" height="200" width="200">
+        <img src="{% static 'img/student1.jpg' %}" alt="" height="200" width="200">
+
+    </div>
+    {% endblock main_body %}

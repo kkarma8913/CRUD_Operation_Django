@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <title>welcome to codebetter</title>
+        <style>
+            body{
+                background-color: paleturquoise;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 align="center">Welcome to CodeBetter</h1>
+        <hr>
+        <p style="color: blue;background-color: gold;">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo quis voluptatem dolores corrupti velit blanditiis distinctio amet voluptates, hic, error expedita sunt? Ad, natus neque illum commodi fuga rem quis numquam, fugit laborum repellendus voluptate repudiandae! Minus, dolores molestiae beatae maiores totam perferendis, id repellendus deserunt delectus laborum quidem nam tenetur excepturi quod. Eligendi numquam nostrum veniam, nam minima consequuntur qui repellat, magni debitis culpa deleniti recusandae quibusdam? Alias adipisci, hic perferendis ducimus aut, odio beatae officia dignissimos inventore quos autem nihil cum error at? Eveniet, cupiditate ab! Quo harum fugit aliquam dolores similique, incidunt, quasi beatae distinctio voluptatibus accusantium blanditiis maiores dolor molestiae aliquid hic nobis voluptates maxime nisi expedita cupiditate quis in. Ex error alias ipsam dicta quod. Atque cupiditate ab totam. Aperiam mollitia aut voluptate a. Culpa placeat aliquid, repellendus sunt iusto fugiat magnam commodi omnis pariatur, earum animi quod numquam recusandae libero corporis, laborum qui sit quas itaque nemo? Quas sequi vero odit rem reiciendis velit, asperiores minus autem! Esse fugiat in facilis, pariatur modi placeat, nemo magnam quis et atque inventore temporibus iste ex maiores nobis repudiandae, blanditiis ratione! Deleniti similique enim, perferendis culpa asperiores labore fugit dicta aspernatur, quas quia sed aperiam alias vero!</p>
+        <h3>languages</h3>
+        <ul>
+            {% for i in data %}
+                <li>{{i}}</li>
+            {% endfor %}
+
+        </ul>
+
+        <hr>
+        <h3>Students Name</h3>
+        <ol>
+            {% for i in student_data %}
+                <li>{{i}}</li>
+            {% endfor %}
+        </ol>
+
+        <form action="">
+            <label for="">Name</label>
+            <input type="text">
+        </form>
+    </body>
+</html>
